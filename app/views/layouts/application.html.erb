@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PasswordTest</title>
+	<%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+
+	<div>
+		<% if current_user %>
+		<%= link_to "Sign Out", signout_path %>
+		<% else %>
+		<%= link_to "Sign Up", signup_path %>
+		|
+		<%= link_to "Sign In", signin_path %>
+		<% end %>
+	</div>
+	
+	<%= yield %>
+</body>
+</html>
